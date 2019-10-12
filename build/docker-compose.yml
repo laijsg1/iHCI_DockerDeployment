@@ -1,0 +1,24 @@
+version: '3.7'  #specify docker-compose version
+#version 关系到和docker版本的兼容性，具体的关联可以上网搜，我当初的docker版本是19.03.2，然后写的version就是3.7
+
+#Define the services/containers to run
+services:
+  ihci: #name of the first service
+    build: iHCI  # specify the directory of the Dockerfile
+    ports:
+        - "5000:5000" #specify ports forwarding
+    links: #注意这个links,它把下面两个容器服务的域名映射到了ihci容器服务中，下面会用到
+      - mongo 
+      - redis   
+
+  mongo: # name of the second service
+    image: mongo # specify image to build container from
+    ports:
+      - "27017:27017" # specify port forwarding
+
+  redis: # name of the second service
+    image: redis # specify image to build container from
+    ports:
+      - "6379:6379" # specify port forwarding
+    command:
+      redis-server   

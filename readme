@@ -1,0 +1,3 @@
+build文件夹为建立docker
+depolyment文件夹部署docker
+注意：运行start命令时，建议加上自己的用户名
