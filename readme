@@ -1,3 +1,5 @@
 build文件夹为建立docker
 depolyment文件夹部署docker
-注意：运行start命令时，建议加上自己的用户名
+注意：
+    1.rpc仅仅是CentOS上部署的,其他平台的过程暂时没有
+    2.运行start命令时，建议加上自己的用户名
